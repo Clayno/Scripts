@@ -1,2 +1,2 @@
-<h1>Obtenir un shell complet</h1>
+<h2>Obtenir un shell complet</h2>
 <ul>Avec netcat :</ul>
