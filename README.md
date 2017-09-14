@@ -12,3 +12,7 @@ nc -w 3 [destination] 1234 < out.file</br>
 
 Tunnel ssh dynamique sur le port local 8080:</br>
 ssh -ND 8080 root@addressIP</br>
+
+Accorder les permissions pour un user specifique 
+
+setfacl -m u:username:rwx myfolder
