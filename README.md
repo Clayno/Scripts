@@ -16,3 +16,7 @@ ssh -ND 8080 root@addressIP</br>
 Accorder les permissions pour un user specifique 
 
 setfacl -m u:username:rwx myfolder
+
+dir sysprep /s /b pour trouver un fichier dans le repertoire courant et ses sous-dossiers
+
+use post/multi/recon/local_exploit_suggester
