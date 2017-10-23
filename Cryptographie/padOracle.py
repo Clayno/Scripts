@@ -60,7 +60,7 @@ def decrypt(flag, block_size, error):
 				else :
 					ourBlock[i] = format(k, 'x')
 				toSend = ''.join(ourBlock) + BlockString[block]
-				print(toSend)
+				
 				if oracle(toSend, error) :
 					# I = Etat intermediaire
 					# C = Ciphertext
