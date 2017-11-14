@@ -65,10 +65,10 @@ do
 done
 
 # can't continue without index file
-if 
+if [ -z INDEX ]
 then
 	echo -e "\033[31m[-] Index file could not be retrieved. Terminating."
-	exit()
+	exit
 fi
 
 # get hash from index and formating 
