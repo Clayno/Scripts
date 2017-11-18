@@ -45,6 +45,7 @@ echo -e "\033[34m[-] Initialisation of repository\033[0m"
 # initialisation of git directory
 mkdir -p ${directory}
 git init ${directory}
+echo "Target : ${url}"
 
 # retrieving all the known files we can
 for file in ${base_url[@]}
@@ -57,7 +58,7 @@ do
     		INDEX="yes"
     	fi
     	echo -e "\033[32m[+] ${file} found !\033[0m"
-    	echo "${file}" >> retrieved.txt
+    	echo "${file}" >> ${directory}retrieved.txt
     else
     	rm "${directory}.git/${file}"
     	echo -e "\033[31m[-] Could not retrieve ${file}\033[0m"
@@ -75,7 +76,8 @@ fi
 cd "${directory}"
 git ls-files --stage > files.txt
 sed "s/\t/ /" files.txt > /dev/null
-echo "File retrieved :" > retrieved.txt
+echo "" >> retrieved.txt
+echo "File retrieved :" >> retrieved.txt
 
 # curl that list
 while read -r line
