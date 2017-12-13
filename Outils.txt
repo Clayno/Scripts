@@ -1,0 +1,33 @@
+Outils:
+Web:
+ZAP -> Proxy web
+Nikto -> Scan automatiques
+SOAP UI -> Requêtes SOAP et parse WSDL
+Sqlmap -> Test pour SQLI
+DirBuster -> Brute force de répertoires/fichiers web
+dirb -> Pareil mais CLI
+
+
+Mobile:
+BytecodeViewer -> Décompilation JAR et APKS
+Apktools -> Décompilation APK en JAR ou SMALI
+Dex2Jar -> Convert dex to jar
+Androbugs -> Revue de code automatique
+
+Réseau:
+Nmap -> Scanneur de ports
+Metasploit -> Framework d'exploitation
+Wireshark -> Capture et analyses de captures réseau
+
+Forensique:
+Bless Hex Editor -> Éditeur hexadécimal
+FTKImager -> Viewer de copies forensiques
+Autopsy -> Viewer et analyseur de copies forensiques
+Bulk extractor -> Récupère des informations de copies forensiques (Clef AES)
+binwalk -> Analyse de fichiers
+
+Mots de passe:
+Hashcat -> Crack de mdp avec GPU
+
+Revue de code:
+MonoDevelop -> DLL décompilation
