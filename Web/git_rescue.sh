@@ -35,10 +35,14 @@ url="${POSITIONAL[0]}"
 directory="${POSITIONAL[1]}"
 
 # known files in .git folder
-base_url=("HEAD" "objects/info/packs" "description" "config" "COMMIT_EDITMSG" \
-"index" "packed-refs" "refs/heads/master" "refs/remotes/origin/HEAD" \
+base_url=("HEAD" "ORIG_HEAD" "FETCH_HEAD" "MERGE_HEAD" "MERGE_MODE" "MERGE_MSG" \
+"objects/info/packs" "description" "config" \
+"COMMIT_EDITMSG" "index" "packed-refs" "refs/heads/master" "refs/remotes/origin/HEAD" \
 "refs/stash" "logs/HEAD" "logs/refs/heads/master" "logs/refs/remotes/origin/HEAD" \
-"info/refs" "info/exclude" "../.gitignore" "../.gitmodules")
+"info/refs" "info/exclude" "../.gitignore" "../.gitmodules"  \
+"hooks/applypatch-msg" "hooks/commit-msg" "hooks/post-commit" "hooks/post-receive" \
+"hooks/post-update" "hooks/pre-applypatch" "hooks/pre-commit" "hooks/pre-rebase" \
+"hooks/prepare-commit-msg" "hooks/update")
 
 echo -e "\033[34m[-] Initialisation of repository\033[0m"
 
