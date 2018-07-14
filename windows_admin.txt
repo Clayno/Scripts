@@ -1,0 +1,2 @@
+Show all recorded networks: netsh wlan show profile
+Show specific network infos and cleartext key: netsh wlan show profile "NETWORK_NAME" key=clear
