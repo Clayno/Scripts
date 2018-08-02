@@ -32,6 +32,7 @@ net users [username] pour obtenir des renseignements sur les utilisateurs</br>
 tasklist pour lister les processus</br>
 netstat -ano pour les connexions reseau</br>
 dir sysprep /s /b pour trouver un fichier dans le repertoire courant et ses sous-dossiers</br>
+wmic qfe list pour lister les mises à jour installées</br>
 
 
 <h2>Metasploit</h2>
