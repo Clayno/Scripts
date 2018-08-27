@@ -13,4 +13,5 @@
 <i>wmic useraccount where name='user'</i> → Récupère des informations sur un utilisateur (SID)</br>
 
 <h2>Powershell</h2>
+<i>{(New-Object System.Net.WebClient).DownloadFile("http://site.com/file", "C:\\Users\Public\file")}</i> → Wget en powershell</br>
 get-WmiObject -class Win32_Share
