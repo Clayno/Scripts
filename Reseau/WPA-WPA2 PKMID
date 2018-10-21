@@ -1,0 +1,2 @@
+filter.txt contient le BSSID du point d'accès visé:
+hcxdumptool -o out.pcapng --filterlist=filter.txt --filtermode=2 -c 9 -i wlan0mon --enable_status=3
