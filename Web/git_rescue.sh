@@ -12,6 +12,10 @@ case $key in
     ;;
     -f|--force)
     FORCE=YES
+	shift # past argument
+    ;;
+	-p|--proxy
+	PROXY=YES
     shift # past argument
     ;;
     *)    # unknown option
@@ -24,9 +28,11 @@ set -- "${POSITIONAL[@]}" # restore positional parameters
 
 if [ ! -z ${HELP} ] || [ -z ${POSITIONAL[0]} ]
 then
-	echo "Usage : $0 [-h|--help] [-f|--force] url/ dir_out/"
+	echo "Usage : $0 [-h|--help] [-f|--force] [-p|--proxy] url/ dir_out/"
 	echo "Url like http://adresse/path/.git/"
 	echo "Directory with a / at the end please"
+	echo "--force options retries all requests"
+	echo "--proxy option allow to use a proxy as curl parameter (tor only for now)"
 	exit
 fi
 
@@ -54,7 +60,14 @@ echo "Target : ${url}"
 # retrieving all the known files we can
 for file in ${base_url[@]}
 do
-	HTTP_STATUS=$(curl --silent -w "%{http_code}" "${url}${file}" --create-dirs -o "${directory}.git/${file}" 2>&1)
+	# check if proxy is requested
+	if [ -z ${PROXY} ]
+	then
+		HTTP_STATUS=$(curl --silent -w "%{http_code}" "${url}${file}" --create-dirs -o "${directory}.git/${file}" 2>&1)
+	else
+		HTTP_STATUS=$(curl --socks5-hostname localhost:9050 --silent -w "%{http_code}" "${url}${file}" --create-dirs -o "${directory}.git/${file}" 2>&1)
+	fi	
+	
 	if [ ${HTTP_STATUS} == "200" ]
     then
     	if [ ${file} == "index" ]
@@ -91,8 +104,13 @@ do
     path=$(echo $line | cut -f4 -d" ")
 
     # actual work begins
-    HTTP_STATUS=$(curl --silent -w "%{http_code}" "${url}objects/${hash_file:0:2}/${hash_file:2}" --create-dirs -o ".git/objects/${hash_file:0:2}/${hash_file:2}" 2>&1)
-
+	if [ -z ${PROXY} ]
+	then
+		HTTP_STATUS=$(curl --silent -w "%{http_code}" "${url}objects/${hash_file:0:2}/${hash_file:2}" --create-dirs -o ".git/objects/${hash_file:0:2}/${hash_file:2}" 2>&1)
+	else
+		HTTP_STATUS=$(curl --socks5-hostname localhost:9050 --silent -w "%{http_code}" "${url}objects/${hash_file:0:2}/${hash_file:2}" --create-dirs -o ".git/objects/${hash_file:0:2}/${hash_file:2}" 2>&1)
+	fi
+	
     # if the request went ok save it
     if [ ${HTTP_STATUS} == "200" ]
     then
@@ -105,7 +123,12 @@ do
     	if [ ! -z ${FORCE} ]
     	then
     		echo "Retrying..."
-    		HTTP_STATUS=$(curl --silent -w "%{http_code}" "${url}objects/${hash_file:0:2}/${hash_file:2}" --create-dirs -o ".git/objects/${hash_file:0:2}/${hash_file:2}" 2>&1)
+    		if [ -z ${PROXY} ]
+			then
+				HTTP_STATUS=$(curl --silent -w "%{http_code}" "${url}objects/${hash_file:0:2}/${hash_file:2}" --create-dirs -o ".git/objects/${hash_file:0:2}/${hash_file:2}" 2>&1)
+			else
+				HTTP_STATUS=$(curl --socks5-hostname localhost:9050 --silent -w "%{http_code}" "${url}objects/${hash_file:0:2}/${hash_file:2}" --create-dirs -o ".git/objects/${hash_file:0:2}/${hash_file:2}" 2>&1)
+			fi
 
 		    if [ ${HTTP_STATUS} == "200" ]
 		    then
