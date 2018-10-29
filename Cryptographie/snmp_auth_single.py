@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# coding: utf-8
+# Dependencies: snmpkey (apt-get-install libnet-snmp-perl) with perl modules Crypt::DES and Digest::HMAC (cpan install)
+
 import binascii
 import argparse
 import hashlib
@@ -28,7 +32,7 @@ f.close()
 listPass = contenu.split("\n")
 
 with open(args.file, "r") as f:
-    contenu = f.read()
+    contenu = f.read().rstrip()
 f.close()
 whole_message = binascii.unhexlify(contenu)
 print("[+] Parametres")
