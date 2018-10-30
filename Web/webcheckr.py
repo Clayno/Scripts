@@ -90,8 +90,8 @@ if __name__ == "__main__":
     # Start analysing web application
     found = wappalyzer(url)
     # Check if a known CMS is detected
-    cms = found["CMS"]
-    if cms is not None:
+    if "CMS" in found.keys():    
+        cms = found["CMS"]
         if "WordPress" in cms:  
             wpscan(url)
     if directory_bf:
