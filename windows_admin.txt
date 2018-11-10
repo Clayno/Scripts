@@ -2,3 +2,6 @@ Show all recorded networks: netsh wlan show profile
 Show specific network infos and cleartext key: netsh wlan show profile "NETWORK_NAME" key=clear
 
 Get disks mounted on windows: wmic logicaldisk get deviceid, volumename, description
+
+Port forward cmd:
+netsh interface portproxy add v4tov4 listenport=4445 listenaddress=0.0.0.0 connectport=4445 connectaddress=x.x.x.x
