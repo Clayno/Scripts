@@ -5,8 +5,11 @@ Tunnel ssh dynamique sur le port local 8080:</br>
 ssh -ND 8080 root@addressIP</br>
 Rebonds avec ssh:</br>
 ssh -J root@premier_rebond root@cible</br>
-Port forwarding avec ssh:</br>
+Port forwarding avec ssh:
+
+```
 ssh -NL port_local:cible_distante:port_cible_distante root@rebond</br>
+```
 <h3>Obtenir un shell</h3>
 Ouvrent un shell sur le port 2222 :
 <ul>
