@@ -34,6 +34,9 @@ Hydra:</br>
 http-auth bute force</br>
 hydra -L user.txt -P password.txt -t12 -f x.x.x.x http-get / -V</br>
 
+XfreeRDP:</br>
+xfreerdp /f +clipboard /kbd:0x0000040C /u:USERNAME@DOMAIN /p:PASSWORD /v:IP</br>
+
 <h2>Windows</h2>
 systeminfo pour obtenir des renseignements sur le systeme</br>
 net users [username] pour obtenir des renseignements sur les utilisateurs</br>
