@@ -66,6 +66,8 @@ xfreerdp /f +clipboard /kbd:0x0000040C /u:USERNAME@DOMAIN /p:PASSWORD /v:IP
 
 `net users [username]` pour obtenir des renseignements sur les utilisateurs
 
+`net account` information sur la politique de mot de passe
+
 `tasklist` pour lister les processus
 
 `netstat -ano` pour les connexions reseau
