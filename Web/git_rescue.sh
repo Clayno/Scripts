@@ -14,7 +14,7 @@ case $key in
     FORCE=YES
 	shift # past argument
     ;;
-	-p|--proxy
+	-p|--proxy)
 	PROXY=YES
     shift # past argument
     ;;
